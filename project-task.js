@@ -82,3 +82,4 @@ Code Flow Problems:
 Structured Exception Handling:
   Add try/catch blocks to handle the above errors gracefully.
 */
+console.log(`Hi`);
