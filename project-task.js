@@ -57,11 +57,13 @@ while (true) {
     if (action === "add") {
         let animal = readlineSync.question("Enter the animal's name: ");
         let fee = Number(readlineSync.question("Enter the adoption fee: "));
-        addAnimal(animal, fee);
+        try{ addAnimal(animal, fee);
         console.log(`${animal} added with a fee of $${fee}.`);
+        }catch (err) {console.error(`${err}`)}
     } else if (action === "fee") {
         let animal = readlineSync.question("Enter the animal's name to find its adoption fee: ");
-        console.log(`${animal}'s adoption fee is $${getAdoptionFee(animal)}.`);
+        try {console.log(`${animal}'s adoption fee is $${getAdoptionFee(animal)}.`);
+        } catch (err) {console.error(`${err}`)}
     } else {
         console.log("Invalid action. Please choose 'add', 'fee', or 'exit'.");
     }
@@ -82,4 +84,3 @@ Code Flow Problems:
 Structured Exception Handling:
   Add try/catch blocks to handle the above errors gracefully.
 */
-console.log(`Hi`);
